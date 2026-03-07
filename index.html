@@ -534,12 +534,77 @@
       background: var(--glass);
     }
 
-    /* slide-portrait in mobile handled above */
-    @media (max-width: 768px) {
-      .slide-portrait-wrap {
-        height: 35vh !important;
-        max-height: 35vh !important;
+    /* ── RESPONSIVE SLIDES: all breakpoints ── */
+
+    /* Tablet landscape & small desktop */
+    @media (max-width: 1024px) {
+      .slide {
+        padding: 50px 6% 110px;
       }
+      .slide-title {
+        font-size: clamp(28px, 5vw, 55px) !important;
+      }
+      .slide-portrait-wrap {
+        height: 45vh;
+        max-height: 45vh;
+      }
+      .timeline-grid {
+        gap: 24px;
+      }
+    }
+
+    /* Tablet portrait */
+    @media (max-width: 768px) {
+      .slide {
+        padding: 50px 5% 100px;
+        justify-content: flex-start;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      .layout-split {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        height: auto !important;
+      }
+      .slide-content-right {
+        border-left: none !important;
+        padding-left: 0 !important;
+      }
+      .slide-portrait-wrap {
+        height: 36vh !important;
+        max-height: 36vh !important;
+      }
+      .slide-title {
+        font-size: clamp(26px, 8vw, 42px) !important;
+        text-align: center;
+      }
+      .slide-subtitle { text-align: center; }
+      .slide-desc { text-align: center; font-size: 0.95em; }
+      .timeline-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .milestone-card { padding: 14px; }
+      .milestone-image { display: none; } /* hide cert image inside milestone on mobile to save space */
+      .index-list { grid-template-columns: 1fr !important; gap: 8px 0 !important; }
+      .index-item { font-size: clamp(15px, 4vw, 20px) !important; white-space: normal !important; }
+      .social-links-row { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      .slide {
+        padding: 40px 4% 90px;
+      }
+      .slide-title {
+        font-size: clamp(22px, 9vw, 36px) !important;
+      }
+      .slide-portrait-wrap {
+        height: 30vh !important;
+        max-height: 30vh !important;
+      }
+      .slide-desc { font-size: 0.9em; }
+      .nav-btn { padding: 10px 18px !important; font-size: 12px !important; }
     }
 
     .slide-portrait-wrap img {
@@ -1207,8 +1272,7 @@
         font-size: clamp(24px, 8vw, 32px);
         /* Responsive font size */
         text-align: center;
-        white-space: nowrap;
-        /* Keep on one line */
+        white-space: normal;
       }
 
       .hero-subtitle {
@@ -1240,38 +1304,7 @@
         word-break: break-all;
       }
 
-      .slide {
-        padding: 50px 5% 100px;
-        justify-content: flex-start;
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-
-      .layout-split {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        height: auto;
-      }
-
-      .slide-portrait-wrap {
-        height: 38vh !important;
-        max-height: 38vh !important;
-      }
-
-      .slide-title {
-        font-size: clamp(32px, 10vw, 48px);
-        text-align: center;
-      }
-
-      .slide-subtitle {
-        text-align: center;
-      }
-
-      .slide-desc {
-        text-align: center;
-        font-size: 1em;
-      }
-
+      /* slide responsive handled in dedicated media blocks above */
       .nav-btn {
         padding: 12px 24px;
         font-size: 13px;
